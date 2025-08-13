@@ -1,0 +1,108 @@
+<html>
+  <head> 
+    <title> Happy Birthday Sanjith </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="image-container">
+        <img class="open" src="opening.png">
+
+        <!-- Trigger Button -->
+        <button onclick="document.getElementById('passwordDialog').style.display='block'">
+             <img class="overlay" src="Button-to-main.png">
+        </button>
+
+        <!-- Dialog Box -->
+        <div id="passwordDialog" class="modal-password " style="display:none;">
+            <div class="password-content">
+                <span class="close3" onclick="document.getElementById('passwordDialog').style.display='none'">&times;</span>
+                <h2>Enter Password</h2>
+                <form onsubmit="return checkPassword(event)">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+                    <button type="submit">Submit</button>
+                </form>
+                <p id="message" style="color:red;"></p>
+            </div>
+        </div>
+
+        <div id="main-page">
+
+            <div id="popup" class="popup hidden">
+                <img class="background-main" src="main.jpg">
+
+                <button onclick="openModal()">
+                    <img class="wanted" src="wanted.jpg">
+                </button>
+
+                <div id="modalOverlay" class="modal-overlay">
+                    <div class="modal-content">
+                        <div class="video-container">
+                            <img src="kiss.jpg" class="kiss" >
+                            <span class="close-button" onclick="closeModal()">&times;</span>
+                            <video class="kiss1" width="450" height="750" controls>
+                                <source src="kiss1.mp4" type="video/mp4">
+                            </video>
+                            <video class="kiss2" width="450" height="750" controls>
+                                <source src="kiss2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="openWindow_openLetters()">
+                    <img class="letters" src="open-when.jpg">
+                </button>
+
+                <button onclick="document.getElementById('birthdayDialog').showModal()">
+                    <img class="loved" src="to-be-loved.jpg">
+                </button>
+
+                <dialog id="birthdayDialog">
+                    <h2>🎂 Wait till your next birthday </h2>
+                    <p id="timerDisplay">Loading...</p>
+                    <button onclick="document.getElementById('birthdayDialog').close()">Close</button>
+                </dialog>
+
+                <div id="popup1" class="popup1 hidden1">
+
+                    <div class="popup-content">
+                        <span class="close" onclick="closeWindow_openLetters()">&times;</span>
+                        <img id="open-when-background" src="open-when-main.jpg">
+
+                        <img class="one" src="1.gif">
+                        <img class="two" src="2.gif">
+
+                        <div class="dropdown-overlay">
+                            <button onclick="toggleDropdown()" class="dropbtn">CLICK HERE TO VIEW AS LETTERS</button>
+                            <div id="dropdownContent" class="dropdown-content">
+                                <a href="#" onclick="showPopup('holiday.jpg','Holiday.mp3')">It's a Holiday and we're apart</a>
+                                <a href="#" onclick="showPopup('Alone.jpg', 'Alone.mp3')">you feel alone</a>
+                                <a href="#" onclick="showPopup('love.jpg','Reminder.mp3')">you need a reminder of how much I love you</a>
+                                <a href="#" onclick="showPopup('angry.jpg','Angry.mp3')">you're angry (even when it's at me)</a>
+                                <a href="#" onclick="showPopup('counting-distance.jpg','Counting-days.mp3')">you’re counting the days until we see each other</a>
+                                <a href="#" onclick="showPopup('doubting-distance.jpg','Doubting-the-distance.mp3')">you’re doubting the distance</a>
+                                <a href="#" onclick="showPopup('down.jpg','Feeling-down.mp3')">you're feeling down</a>
+                                <a href="#" onclick="showPopup('rough-day.jpg','You’ve had a rough day.mp3')">you've had a rough day</a>
+                            </div>
+                        </div>
+
+                        <div id="popup2" class="popup2 hidden2">
+                            <span class="close2" onclick="closePopup2()">&times;</span>
+                            <img id="popupImage" src="" alt="Emotional Image">
+                            <br>
+                            <button onclick="playAudio()" id="audioButton">
+                                <img id="audio" src="audio.jpg">
+                            </button>
+                            <audio id="popupAudio" style="display: none;"></audio>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </body>
+</html>
